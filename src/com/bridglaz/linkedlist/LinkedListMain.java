@@ -26,6 +26,12 @@ public class LinkedListMain<T> {
         }
     }
 
+    public void insertElement(T data) {
+        Node<T> newNode = new Node<>(data);
+        head.next = newNode;
+        newNode.next = tail;
+    }
+
     public void print() {
         Node<T> temp = head;
         if (temp == null) {
@@ -41,14 +47,16 @@ public class LinkedListMain<T> {
 
     public static void main(String[] args) {
         LinkedListMain<Integer> list = new LinkedListMain<>();
-//        list.addElement(70);
-//        list.addElement(30);
-//        list.addElement(56);
+        list.addElement(70);
+        list.addElement(56);
+
+        list.insertElement(30);
+        list.print();
+
+//        list.appendElement(56);
+//        list.appendElement(30);
+//        list.appendElement(70);
 //        list.print();
 
-        list.appendElement(56);
-        list.appendElement(30);
-        list.appendElement(70);
-        list.print();
     }
 }
