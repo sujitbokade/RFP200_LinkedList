@@ -31,6 +31,9 @@ public class LinkedListMain<T> {
         head.next = newNode;
         newNode.next = tail;
     }
+    public void pop(){
+        head = head.next;
+    }
 
     public void print() {
         Node<T> temp = head;
@@ -48,10 +51,15 @@ public class LinkedListMain<T> {
     public static void main(String[] args) {
         LinkedListMain<Integer> list = new LinkedListMain<>();
         list.addElement(70);
+        list.addElement(30);
         list.addElement(56);
-
-        list.insertElement(30);
         list.print();
+
+        list.pop();
+        list.print();
+
+//        list.insertElement(30);
+//        list.print();
 
 //        list.appendElement(56);
 //        list.appendElement(30);
