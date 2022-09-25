@@ -34,6 +34,13 @@ public class LinkedListMain<T> {
     public void pop(){
         head = head.next;
     }
+    public void popLast(){
+        Node<T> temp = head;
+        while (temp.next != tail){
+            temp = temp.next;
+        }
+        temp.next = null;
+    }
 
     public void print() {
         Node<T> temp = head;
@@ -55,8 +62,12 @@ public class LinkedListMain<T> {
         list.addElement(56);
         list.print();
 
-        list.pop();
+        list.popLast();
         list.print();
+
+
+//        list.pop();
+//        list.print();
 
 //        list.insertElement(30);
 //        list.print();
